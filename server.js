@@ -20,9 +20,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -38,6 +38,13 @@ app.get('/', (req, res) => {
   res.render('home.hbs', {
     pageTitle: 'HOME',
     welcomeMessage: 'This is the homepage'
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects',
+    welcomeMessage: 'These are my GitHub Projects:'
   });
 });
 
